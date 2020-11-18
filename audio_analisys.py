@@ -27,7 +27,7 @@ with sr.AudioFile(filename) as source:
 
 # remove stopwords selected
 stopwords = set(STOPWORDS)
-stopwords.update(['the', 'you', 'i', 'me', 'my', 'he', 'she','your','and','we','are'])
+stopwords.update(['the', 'you', 'i', 'me', 'my', 'he', 'she','your','and','we','are','am'])
 
 # creating the wordcloud
 wordcloud = WordCloud(stopwords=stopwords,
