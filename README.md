@@ -1,6 +1,6 @@
 # Audio_Analisys
  
- Script that converts audio files .wac in string, plot the audio frequency and make a word cloud with hot words.
+ Script that converts audio files .wav in string, plot the audio frequency and make a word cloud with hot words.
 
  # Installation:
 

@@ -6,7 +6,7 @@ import speech_recognition as sr
 from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
 
 # audio file path (english audio)
-filename = 'Gravação.wav'
+filename = 'eng.wav'
 
 # reading audio frequency
 [fs , x] = audioBasicIO.read_audio_file(filename)
