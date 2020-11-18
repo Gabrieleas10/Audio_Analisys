@@ -15,6 +15,7 @@ filename = 'Gravação.wav'
 plt.plot(x)
 plt.grid()
 
+# audio speech recognition
 rec = sr.Recognizer()
 
 with sr.AudioFile(filename) as source:
@@ -24,6 +25,19 @@ with sr.AudioFile(filename) as source:
     text = rec.recognize_google(audio_data , language='en-US') # to change language: https://cloud.google.com/speech-to-text/docs/languages
     print(text)
 
+# remove stopwords selected
 stopwords = set(STOPWORDS)
 stopwords.update(['the', 'you', 'i', 'me', 'my', 'he', 'she','your','and','we','are'])
 
+# creating the wordcloud
+wordcloud = WordCloud(stopwords=stopwords,
+                      background_color="black",
+                      width=1600, height=800).generate(text)
+
+# ploting and saving wordcloud image
+fig, ax = plt.subplots(figsize=(10,6))
+ax.imshow(wordcloud, interpolation='bilinear')
+ax.set_axis_off()
+ 
+plt.imshow(wordcloud)
+wordcloud.to_file("w_cloud.png")
